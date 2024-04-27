@@ -1,0 +1,97 @@
+<main>
+  <div class="d-flex align-items-center vh-100">
+    <div class="container">
+      <div class="card bg-light">
+        <div class="card-body p-5">
+          <div class="row">
+            <div class="col-6 mt-4 text-center">
+              <h1 class="ml-5">HealthPharm</h1>
+              <h3>Medication Suggestion Prototype</h3>
+              <img
+                class="w-75 mt-3"
+                src="../assets/image/AI_IMG.png"
+                alt="img-view"
+              />
+            </div>
+            <div class="form col-6 mt-5">
+              <p-card>
+                <form #details="ngForm" (ngSubmit)="submit(details)">
+                  <div class="form-group">
+                    <div class="col-12">
+                      <div class="flex flex-column gap-2">
+                        <label for="name">Name</label>
+
+                        <input
+                          class="w-100 form-control"
+                          name="name"
+                          type="text"
+                          pInputText
+                          [(ngModel)]="name"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="mt-4 row">
+                      <div class="col-6">
+                        <div class="flex flex-column gap-2">
+                          <label for="age">Age</label>
+                          <input
+                            class="w-100 form-control"
+                            name="age"
+                            type="number"
+                            pInputText
+                            pKeyFilter="int"
+                            [(ngModel)]="age"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="flex flex-column gap-2">
+                          <label for="allergies"
+                            >Medications you are allergic to</label
+                          >
+                          <input
+                            class="w-100 form-control"
+                            name="allergies"
+                            type="text"
+                            pInputText
+                            [(ngModel)]="allergies"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-4 col-12">
+                      <div class="flex flex-column gap-2">
+                        <label for="symptoms"
+                          >Enter the Symptoms you are having in a detailed
+                          manner</label
+                        >
+                        <input
+                          class="w-100 form-control"
+                          name="symptoms"
+                          type="text"
+                          pInputText
+                          [(ngModel)]="symptoms"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="mt-5 d-flex justify-content-center">
+                      <p-button
+                        [disabled]="isEmpty(details)"
+                        type="submit"
+                        label="Get Suggestion"
+                      ></p-button>
+                    </div>
+                  </div>
+                </form>
+              </p-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
